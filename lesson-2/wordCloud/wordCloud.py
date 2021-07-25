@@ -19,7 +19,8 @@ wordcloud = WordCloud(background_color = 'black', mask = cinderella_mask,
 # 加载文本内容到词云对象中。
 wordcloud.generate(text)
 # 用ImageColorGenerator类方法基于图像模板生成颜色
-image_colors = ImageColorGenerator(cinderella_mask)
+#image_colors = ImageColorGenerator(cinderella_mask)
+ImageColorGenerator(cinderella_mask)
 
 plt.figure(figsize = (32, 16))
 
@@ -30,12 +31,12 @@ plt.subplot(121)
 plt.imshow(wordcloud.recolor(color_func = image_colors), interpolation = 'bilinear')
 
 # 关闭matplotlib图像的轴线和标签。
-plt.axis('off')
+    plt.axis('off')
 
 # 添加右侧 原始对比图 子图图像区域。
-plt.subplot(122)
+    plt.subplot(122)
 plt.imshow(cinderella_mask, cmap=plt.cm.gray, interpolation="bilinear")
-plt.axis('off')
+    plt.axis('off')
 
 # 将图像以定义的图像文件名输出。
 plt.savefig('Cinderella_WordCloud_pic.png')
